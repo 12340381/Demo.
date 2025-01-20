@@ -1,51 +1,163 @@
-body {
-    font-family: Arial, sans-serif;
+/* إعدادات أساسية للصفحة */
+* {
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ترويسة الموقع */
 header {
-    background: #333;
+    background-color: #333;
     color: #fff;
-    padding: 10px 20px;
+    padding: 20px 0;
     text-align: center;
 }
 
+header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+/* شريط التنقل */
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
 }
 
-section {
+nav ul li a:hover {
+    color: #ff6600;
+}
+
+/* قسم المنتجات */
+section#products {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+section#products h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* تصميم المنتج */
+.product {
+    background-color: #fff;
+    border: 1px solid #ddd;
     padding: 20px;
     margin: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.product {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
-    display: inline-block;
     width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.product h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.product p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product .price {
+    font-size: 1.2rem;
+    color: #ff6600;
+    font-weight: bold;
+}
+
+/* التذييل (Footer) */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
     text-align: center;
 }
 
-footer {
-    background: #333;
+footer p {
+    font-size: 1rem;
     color: #fff;
-    text-align: center;
-    padding: 10px 0;
+    margin-top: 10px;
+}
+
+/* استجابة التصميم للأجهزة المحمولة */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 15px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    section#products {
+        padding: 30px 10px;
+    }
+
+    .product {
+        width: 80%;
+        margin: 10px auto;
+    }
+}
+
+/* استجابة التصميم للأجهزة الصغيرة (هواتف) */
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+    }
+
+    section#products h2 {
+        font-size: 1.5rem;
+    }
+
+    .product {
+        width: 100%;
+        margin: 15px 0;
+    }
 }
